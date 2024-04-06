@@ -1,0 +1,72 @@
+.background{
+    background: #000000;
+    --gap: 3em;
+    --line: 1px;
+    --color: rgba(255, 255, 255, 0.2);
+  
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
+  }
+  
+
+.img {
+    height: 30%;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+  }
+  .img {
+    height: 50%;
+    animation: anim 3s infinite;
+  }
+  
+  @keyframes anim {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .inputfield{
+    width: 100%;
+    border-radius: 4px;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    border:#070907 solid 1px;
+     }
+
+.inputfield:focus{
+  border: #fc9e4f solid 1px ;
+  outline: none;
+}
+.inputfield::placeholder{
+  color: #070907;
+}
+select {
+ appearance: none;
+ background: #fff;
+}
+input{
+  appearance: none;
+}
