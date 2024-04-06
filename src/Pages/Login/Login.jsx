@@ -29,7 +29,7 @@ const Login=()=>{
           }
           )
           if (response.status==200) {
-            Cookies.set("token",response.data.token)
+            // Cookies.set("token",response.data.token)
             setMessage("Logged in Successfully")
             setMessageType('success');
             setTimeout(() => {
