@@ -21,8 +21,8 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][]
-[![Issues][issues-shield]][https://github.com/STORM992002/TheSlug/issues]
-[![MIT License][license-shield]][https://github.com/STORM992002/TheSlug/blob/main/LICENSE]
+[![Issues][issues-shield]][https://github.com//TheSlug/issues]
+[![MIT License][license-shield]][https://github.com/360Parminder/TheSlug/blob/main/LICENSE]
 [![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/parminder-singh-storm/]
 
 
@@ -39,14 +39,14 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/STORM992002/TheSlug"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/360Parminder/TheSlug"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/STORM992002/TheSlug">View Demo</a>
+    <a href="https://github.com/360Parminder/TheSlug">View Demo</a>
     ·
-    <a href="https://github.com/storm992002/TheSlug/issues">Report Bug</a>
+    <a href="https://github.com/360Parminder/TheSlug/issues">Report Bug</a>
     ·
-    <a href="https://github.com/STORM992002/TheSlug/pulls">Request Feature</a>
+    <a href="https://github.com/360Parminder/TheSlug/pulls">Request Feature</a>
   </p>
 </div>
 
@@ -122,7 +122,7 @@ slugtheproject@gmail.com
 ```
 2. Clone the repo
    ```sh
-   git clone https://github.com/STORM992002/TheSlug.git
+   git clone https://github.com/360Parminder/TheSlug.git
    ```
 3. Install NPM packages
    ```sh
@@ -142,7 +142,7 @@ slugtheproject@gmail.com
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://github.com/storm992002/TheSlug)_
+_For more examples, please refer to the [Documentation](https://github.com/360Parminder/TheSlug)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,7 +156,7 @@ _For more examples, please refer to the [Documentation](https://github.com/storm
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/storm992002/TheSlug/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/360Parminder/TheSlug/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,7 +194,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/360parminder) - 360.parminder.com
 
-Project Link: [https://github.com/STORM992002/TheSlug](https://github.com/STORM992002/TheSlug)
+Project Link: [https://github.com/360Parminder/TheSlug](https://github.com/360Parminder/TheSlug)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -215,13 +215,13 @@ Project Link: [https://github.com/STORM992002/TheSlug](https://github.com/STORM9
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/360Parminder/TheSlug.svg?style=for-the-badge
 [contributors-url]: https://github.com/360Parminder/TheSlug/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/storm992002/datastorex.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/360Parminder/datastorex.svg?style=for-the-badge
 [forks-url]: https://github.com/360Parminder/TheSlug/network/members
-[stars-shield]: https://img.shields.io/github/stars/storm992002/datastorex.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/360Parminder/datastorex.svg?style=for-the-badge
 [stars-url]: https://github.com/360Parminder/TheSlug/stargazers
-[issues-shield]: https://img.shields.io/github/issues/storm992002/datastorex.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/360Parminder/datastorex.svg?style=for-the-badge
 [issues-url]: https://github.com//360Parminder/TheSlug/issues
-[license-shield]: https://img.shields.io/github/license/storm992002/datastorex.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/360Parminder/datastorex.svg?style=for-the-badge
 [license-url]: https://github.com/360Parminder/TheSlug/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/parminder-singh-storm/
