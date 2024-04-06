@@ -20,11 +20,10 @@
 -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][]
-[![Issues][issues-shield]][https://github.com//TheSlug/issues]
-[![MIT License][license-shield]][https://github.com/360Parminder/TheSlug/blob/main/LICENSE]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/parminder-singh-storm/]
-
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 <!-- PROJECT LOGO -->
@@ -37,7 +36,7 @@
 <h3 align="center">The Slug Project</h3>
 
   <p align="center">
-    project_description
+    The URL Shortener project aims to create a service that shortens long URLs into more manageable and shareable links. The project utilizes a frontend built with React for the user interface, and a backend powered by Node.js for handling requests, interacting with a MongoDB database, and sending emails via Nodemailer.
     <br />
     <a href="https://github.com/360Parminder/TheSlug"><strong>Explore the docs »</strong></a>
     <br />
@@ -74,7 +73,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -92,9 +90,13 @@ The URL Shortener project aims to create a service that shortens long URLs into 
 
 
 ### Built With
-* [![React][React.js]][https://react.dev/]
-* [![][Bootstrap.com]][Bootstrap-url]
-
+![React](https://img.shields.io/badge/-React-000?logo=react&labelColor=000&color=61DAFB)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-000?logo=bootstrap&labelColor=000&color=563D7C)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-000?logo=tailwind-css&labelColor=000&color=06B6D4)
+![Node.js](https://img.shields.io/badge/-Node.js-000?logo=node.js&labelColor=000&color=339933)
+![Express.js](https://img.shields.io/badge/-Express.js-000?logo=express&labelColor=000&color=000)
+![Nodemailer](https://img.shields.io/badge/-Nodemailer-000?logo=nodemailer&labelColor=000&color=6B5E9C)
+![Firebase](https://img.shields.io/badge/-Firebase-000?logo=firebase&labelColor=000&color=FFCA28)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,9 +119,9 @@ This is an example of how to list things you need to use the software and how to
 ### Installation
 
 1. Get a free API Key at 
-```sh
-slugtheproject@gmail.com
-```
+    ```sh
+    slugtheproject@gmail.com
+    ```
 2. Clone the repo
    ```sh
    git clone https://github.com/360Parminder/TheSlug.git
@@ -140,7 +142,7 @@ slugtheproject@gmail.com
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Users can navigate to the <a href="https://theslug.netlify.app/">Slug</a> website and find a text input field where they can paste their long URL. Upon submitting the form, the website generates a shortened URL, which users can copy and share with others.
 
 _For more examples, please refer to the [Documentation](https://github.com/360Parminder/TheSlug)_
 
@@ -198,19 +200,6 @@ Project Link: [https://github.com/360Parminder/TheSlug](https://github.com/360Pa
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/360Parminder/TheSlug.svg?style=for-the-badge
@@ -225,7 +214,7 @@ Project Link: [https://github.com/360Parminder/TheSlug](https://github.com/360Pa
 [license-url]: https://github.com/360Parminder/TheSlug/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/parminder-singh-storm/
-[product-screenshot]: img/Screenshot.jpeg
+[product-screenshot]: ./public/image/Screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
