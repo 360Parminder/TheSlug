@@ -29,7 +29,7 @@ const Profiledropdown=({userData})=>{
         <div className=" absolute z-40 w-[16vw] h-[35vh] bg-[#181E29] shadow-2xl right-[10vw] top-20 rounded-lg flex flex-col justify-between">
             <div className="flex rounded-t-lg justify-center items-center w-full h-2/5 relative bg-slate-300">
                 <div className="w-14 h-14 overflow-hidden absolute -bottom-7 rounded-full">
-                <img  className=" w-full h-full rounded-full overflow-hidden" src={"https://theslugproject.onrender.com/public/assets/profile/"+userData.profile_picture} alt="User Profile" />
+                <img  className=" w-full h-full rounded-full overflow-hidden" src={"https://theslugproject.onrender.com/public/assets/profile/"+userData?.profile_picture} alt="User Profile" />
                 </div>
             </div>
 
