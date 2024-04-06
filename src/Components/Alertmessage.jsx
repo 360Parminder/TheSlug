@@ -1,5 +1,4 @@
-import { IonIcon } from '@ionic/react';
-import { closeOutline } from 'ionicons/icons';
+
 import { useEffect, useState } from 'react';
 
 const Alertmessage = ({ message, type }) => {
@@ -40,13 +39,13 @@ const Alertmessage = ({ message, type }) => {
         };
     }
 
-    return visible && (
+    return visible ? (
         <div className='absolute w-full top-5 flex justify-center'>
             <div className='z-10 gap-2 px-4 py-2 rounded-lg items-center' style={style}>
                 <p>{message}</p>
             </div>
         </div>
-    );
+    ):null
 };
 
 export default Alertmessage;
