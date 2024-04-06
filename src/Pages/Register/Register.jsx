@@ -69,7 +69,7 @@ const Register = () => {
             setMessageType('info')
             setMessage('Sending OTP ...')
             try {
-                let response = await axios.post(`http://localhost:10000/email_verify`, {
+                let response = await axios.post(`${baseUrl.backend}/email_verify`, {
                     email: email
                 }, {
                     withCredentials: true,
