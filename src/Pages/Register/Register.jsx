@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Alertmessage from "../../Components/Alertmessage";
-import axios from "axios";
+import axios, { Axios } from "axios";
 import './Register.css'
 import { useNavigate } from "react-router-dom";
 import baseUrl from "../../baseUrl";
@@ -51,22 +51,18 @@ const Register=()=>{
         }
     }
     const fetchOtp=async ()=>{
-        if (!email) {
-            setMessageType("warning")
-            setMessage("Please enter your registered Email Id to get OTP!")
-        }
-        else{
+        if (email) {
             setMessageType('info')
             setMessage('Sending OTP ...')
             try {
-                const response =await axios.post("http://localhost:10000/email_verify",{
+                const response =await axios.post(`${baseUrl.backend}/email_verify`,{
                     email:email
                 },
-                    {
+                {
                         withCredentials:true,
                     })
                     console.log(response);
-                    if (response.data.success==true){
+                    if(response.status==200){
                         messageType("success")
                         message("OTP Sent to Your Email Id.")
                         console.log(response.data.otp);
@@ -84,6 +80,11 @@ const Register=()=>{
                 setMessageType( "error");
                 setMessage("Server Error. Please Try Again Later.");
             }
+        }
+        else{
+            
+            setMessageType("warning")
+            setMessage("Please enter your registered Email Id to get OTP!")
         }
     }
 //show otp box
