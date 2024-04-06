@@ -194,7 +194,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/360parminder) - 360.parminder.com
+Parminder Singh - [@twitter_handle](https://twitter.com/360parminder)
 
 Project Link: [https://github.com/360Parminder/TheSlug](https://github.com/360Parminder/TheSlug)
 
