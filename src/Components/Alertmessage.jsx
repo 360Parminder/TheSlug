@@ -39,13 +39,23 @@ const Alertmessage = ({ message, type }) => {
         };
     }
 
-    return visible ? (
+    return (
+     <>
+     {
+        visible===true ?
+        (
         <div className='absolute w-full top-5 flex justify-center'>
             <div className='z-10 gap-2 px-4 py-2 rounded-lg items-center' style={style}>
                 <p>{message}</p>
             </div>
         </div>
-    ):null
+        )
+         :null
+     }
+     </>
+            
+    
+    )
 };
 
 export default Alertmessage;

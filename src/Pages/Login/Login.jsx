@@ -11,7 +11,7 @@ const Login=()=>{
     const [email,setEmail]=useState();
     const [password,setPassword]=useState()
     const [message,setMessage]=useState()
-    const [messageType,setMessageType] = useState(null)
+    const [messageType,setMessageType] = useState()
     const [type,setType]=useState("button")
     const navigate = useNavigate()
     const emailLogin= async ()=>{
