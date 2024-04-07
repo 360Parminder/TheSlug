@@ -16,6 +16,7 @@ function UserNavbar(props) {
   const [userData, setUserData] = useState({});
   const [profileDropdown, setProfileDropDown] = useState(false);
 
+
   const shortLink = async ()=>{
         setMessageType('info');
         setMessage("Loading...");
@@ -28,6 +29,7 @@ function UserNavbar(props) {
               withCredentials: true // this will add the XSRF token to the request header
             });
             if(response.status==200){
+              props.onLoader(false);
               props.onMessage("Hello from UserNavbar!");
               setMessageType("success");
               setMessage("URL Shortened Successfully!");
@@ -51,7 +53,6 @@ function UserNavbar(props) {
       try {
         const response = await axios.post(`${baseUrl.backend}/view_profile`,{},{withCredentials:true})
         if (response.status==200) {
-          
           setUserData(response.data.user);
         }
         else{

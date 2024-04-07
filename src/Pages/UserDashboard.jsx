@@ -11,7 +11,7 @@ const UserDashboard=()=> {
 
     <>
      <div className="w-full h-screen  bg-cover bg-center" style={{backgroundImage: "url('/image/badal.png')"}}>
-    <UserNavbar onMessage={onMessage}/>
+    <UserNavbar onMessage={onMessage} />
       <div className="">
         <History reload={message}/>
       </div>

@@ -14,7 +14,6 @@ const OtpCard = ({ onClose, verifyOTP }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // You can perform additional actions here if needed
     };
 
     return (
