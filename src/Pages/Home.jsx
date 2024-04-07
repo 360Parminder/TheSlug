@@ -6,6 +6,7 @@ import StartLoader from "../Components/Loaders/StartLoader";
 import { useState } from "react";
 
 const Home=()=>{
+  const [loader, setLoader] = useState(true);
   const userToken = Cookies.get("token");
   setTimeout(() => {
       setLoader(false)
