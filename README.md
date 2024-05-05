@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://datastorex.tech/)
+[![Product Name Screen Shot][product-screenshot]](https://theslug.netlify.app/)
 
 The URL Shortener project aims to create a service that shortens long URLs into more manageable and shareable links. The project utilizes a frontend built with React for the user interface, and a backend powered by Node.js for handling requests, interacting with a MongoDB database, and sending emails via Nodemailer.
 
