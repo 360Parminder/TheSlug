@@ -11,7 +11,7 @@ const Profiledropdown=({userData})=>{
         try {
            const response = await axios.post(`${baseUrl.backend}/logout`,{},{withCredentials:true}); 
            if(response.status===200){
-                Cookies.remove('token');
+                Cookies.expire('token');
                navigate("/");
            }else{
                alert("Error Occured")

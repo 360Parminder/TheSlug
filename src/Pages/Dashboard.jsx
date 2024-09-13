@@ -25,7 +25,6 @@ const Dashboard = () => {
       .get("https://api.ipify.org?format=json")
       .then((response) => {
         document.cookie = `ip_address=${response.data.ip}; SameSite=Strict; Secure`;
-        console.log(response.data.ip);
         setIp(response.data.ip);
       })
       .catch((error) => {
@@ -44,7 +43,7 @@ const Dashboard = () => {
        {
          redirectURL: link 
         },{
-          withCredentials: true // this will add the XSRF token to the request header
+          withCredentials: true
         });
         if(response.status==200){
           setMessageType("success");
@@ -65,7 +64,7 @@ const Dashboard = () => {
 
 }
 
-// Prevent the default form submission behavior
+
 function handleSubmit(e) {
 e.preventDefault(); 
 shortLink()

@@ -5,6 +5,7 @@ import './Login.css'
 import axios from 'axios';
 import baseUrl from '../../baseUrl';
 import Cookies from 'cookies-js';
+import AppNavigation from '../../Navigation/AppNavigation';
 
 const Login=()=>{
    
@@ -14,46 +15,43 @@ const Login=()=>{
     const [messageType,setMessageType] = useState()
     const [type,setType]=useState("button")
     const navigate = useNavigate()
-    const emailLogin= async ()=>{
-      if(email && password){
-        //send the data to server for verification  
+    const emailLogin = async () => {
+      if (email && password) {
+        // Send the data to server for verification  
         try {
           setMessage("Loading...");
           setMessageType("info");
-          const response = await axios.post(`${baseUrl.backend}/login`,{
-            email:email,
-            password:password,
-          },
-          {
-            withCredentials:true
-          }
-          )
-          if (response.status==200) {
-            // Cookies.set("token",response.data.token)
-            setMessage("Logged in Successfully")
+    
+          const response = await axios.post(`${baseUrl.backend}/login`, {
+            email: email,
+            password: password,
+          }, {
+            withCredentials: true
+          });
+    
+          if (response.status === 200) {
+            Cookies.set("token", response.data.token);
+            setMessage("Logged in Successfully");
             setMessageType('success');
+    
+            // Redirect to the dashboard after a delay
             setTimeout(() => {
-              navigate('/UserDashboard')
+              navigate('/root/UserDashboard')
             }, 2000);
           } else {
-            setMessage(response.message);
-            setMessageType('warning')
-
+            setMessage(response.data.message || "Login failed");
+            setMessageType('warning');
           }
         } catch (error) {
-          setMessage(error.message);
+          setMessage(error.response?.data?.message || "An error occurred");
           setMessageType('error');
-          setTimeout(() => {
-            navigate('*')
-          }, 5000);
-        }    
-    
-      }else{
+        }
+      } else {
         setMessage("Please fill all fields");
-        setMessageType('info')
-         
+        setMessageType('info');
       }
-    }
+    };
+    
 
 // function for mail button
 

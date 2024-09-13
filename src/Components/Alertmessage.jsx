@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const Alertmessage = ({ message, type }) => {
-    console.log(type);
+    // console.log(type);
 
     let style = {};
     let mainbody = {};

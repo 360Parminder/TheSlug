@@ -73,7 +73,6 @@ const Register = () => {
                 }, {
                     withCredentials: true,
                 })
-                console.log(response);
                 if (response.status === 200) {
                     setMessageType("success")
                     setMessage("OTP Sent to Your Email Id.")

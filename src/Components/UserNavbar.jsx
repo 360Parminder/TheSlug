@@ -53,6 +53,8 @@ function UserNavbar(props) {
       try {
         const response = await axios.post(`${baseUrl.backend}/view_profile`,{},{withCredentials:true})
         if (response.status==200) {
+          console.log(response.data);
+          
           setUserData(response.data.user);
         }
         else{
