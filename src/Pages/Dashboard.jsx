@@ -117,7 +117,7 @@ shortLink()
 
               ):null
              }
-             <div className="flex-col h-[10vh] w-[100vw] flex justify-center items-center relative -top-6 bg-black">
+             <div className="flex-col h-[10vh] w-[100vw] flex justify-center items-center relative -top-6">
              <button onClick={()=>{navigate('/history')}} className=" absolute  bg-blue-700 text-white rounded-lg px-3 py-2 backdrop-blur shadow-md shadow-500/50">View History</button>
              </div>
             </div>
