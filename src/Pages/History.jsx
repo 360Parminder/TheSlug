@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import List from "../Components/List"
-import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import Alertmessage from "../Components/Alertmessage";
 import Listloader from "../Components/Loaders/Listloader";
-import baseUrl from "../baseUrl";
+import UserServices from "../Services/UserServices";
+
 
 
 
@@ -17,25 +17,10 @@ const History=({reload})=>{
         
     useEffect(() => {
       const allLinks = async ()=>{
-        try {
-            const response = await axios.post(`${baseUrl.backend}/show_urls`,{},{
-                withCredentials: true
-            })
-            if(response.status === 200){
-              setHistory(response.data.urls);
-              
-            }else{
-                setMessage("Unable to fetch history")
-                setMessageType("error")
-            }
-          
-        } catch (error) {
-            setMessage(error.toString())
-            setMessageType("error")
-            setTimeout(() => {
-                navigate('*')
-            }, 3000);
-        }
+       const response = await UserServices.fetchHistory();
+       if(response){
+           setHistory(response?.urls);
+       }
       }
       allLinks()
     }, [reload])
@@ -43,7 +28,7 @@ const History=({reload})=>{
     return(
         <>
         <Alertmessage  message={message} type={messageType} />
-        <div className="w-full h-full flex justify-center">
+        <div className="w-full h-full flex justify-center ">
             {
                 history?
                     (

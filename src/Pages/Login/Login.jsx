@@ -5,7 +5,6 @@ import './Login.css'
 import axios from 'axios';
 import baseUrl from '../../baseUrl';
 import Cookies from 'cookies-js';
-import AppNavigation from '../../Navigation/AppNavigation';
 
 const Login=()=>{
    
@@ -36,7 +35,7 @@ const Login=()=>{
     
             // Redirect to the dashboard after a delay
             setTimeout(() => {
-              navigate('/root/UserDashboard')
+              navigate('/')
             }, 2000);
           } else {
             setMessage(response.data.message || "Login failed");

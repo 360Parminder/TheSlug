@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {  useNavigate } from "react-router-dom";
 import { IonIcon } from '@ionic/react';
 import { logoInstagram,logoYoutube } from 'ionicons/icons';
@@ -6,19 +6,20 @@ import Profiledropdown from "./Profiledropdown";
 import {useSelector} from 'react-redux'
 import Lottie from 'lottie-react';
 import animationData from '../assets/Logo.json'
+import { AuthContext } from "../Context/AuthContext";
 
 const Navbar=()=>{
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [isLoggedIn,setIsloggedin]=useState(false);
     const navigate =useNavigate();
+    const [showDropdown, setShowDropdown] = useState(false);
+    const {isLoggedIn,user} =useContext(AuthContext);
+
    
      
     return(
         <>
         <div className="w-full h-20 top-0  mt-0 sticky flex items-center justify-between backdrop-blur">
-        
           { 
-          showDropdown === true?(<Profiledropdown />)
+          showDropdown === true?(<Profiledropdown userData={user}/>)
                                 :null
            } 
             <button onClick={()=>{navigate('/')}} className="w-2/5 h-full  md:w-2/12 "><Lottie className="w-full h-full" animationData={animationData} alt="logo" /></button>
@@ -30,7 +31,7 @@ const Navbar=()=>{
             <div className="flex flex-row gap-5 px-2 ">
             {isLoggedIn===true ? (
                       
-                            <button onClick={()=>{}} className="w-16 h-16 rounded-full me-5"><img className="rounded-full w-full h-full overflow-hidden" src="" alt="Profile Photo" /></button>
+                            <button onClick={()=>{setShowDropdown(!showDropdown)}} className="w-16 h-16 rounded-full me-5"><img className="rounded-full w-full h-full overflow-hidden" src={user?.profile_picture} alt="Profile Photo" /></button>
                         
                     ) : (
                         <div className="flex flex-row gap-5 px-2">

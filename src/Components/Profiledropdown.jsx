@@ -38,7 +38,7 @@ const Profiledropdown=({userData})=>{
                 <p className="text-lg" >{userData?.email}</p>
             </div>
             <div className="text-white w-full flex flex-col items-center my-4 ">
-                <button className="flex items-center gap-2 hover:bg-slate-900 px-4 py-2 rounded-md"> <IonIcon className="text-2xl font-bold " icon={cog}/> Setting</button>
+                {/* <button className="flex items-center gap-2 hover:bg-slate-900 px-4 py-2 rounded-md"> <IonIcon className="text-2xl font-bold " icon={cog}/> Setting</button> */}
                 <button onClick={()=>{Logout()}}  className="flex items-center gap-2 hover:bg-slate-900 px-4 py-2 rounded-md"> <IonIcon className="text-2xl font-bold" icon={logOutOutline}/>Sign Out</button>
             </div>
         </div>
