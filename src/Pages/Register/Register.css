@@ -52,8 +52,9 @@
     padding: 5px;
     display: flex;
     align-items: center;
-    color: #000000;
-    border:#070907 solid 1px;
+    color: #fff;
+    border:#ffffff solid 1px;
+    background-color: #07090799
      }
 
 .inputfield:focus{
@@ -61,7 +62,7 @@
   outline: none;
 }
 .inputfield::placeholder{
-  color: #070907;
+  color: #fafafa;
 }
 select {
  appearance: none;

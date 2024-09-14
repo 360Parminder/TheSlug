@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  
   text-align: center;
+  /* font-family: "Protest Guerrilla", sans-serif; */
+  /* font-family: "SUSE", sans-serif; */
+  font-family: "Roboto Slab", serif;
 }
 
 .logo {
@@ -27,16 +32,4 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

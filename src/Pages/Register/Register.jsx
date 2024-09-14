@@ -132,11 +132,11 @@ const Register = () => {
 
             <div className="background w-full h-screen flex flex-row gap-1 font-poppins ">
                 <div className="flex flex-col w-full sm:w-1/2 h-full items-center justify-center ">
-                    <h3 className=" w-9/12 text-[43px] ps-5 font-semibold text-[#f2f4f3]">Register</h3>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-9/12 px-10 py-5 text-[#231f20] text-xl bg-[#f2f4f3] rounded-md shadow-md shadow-[#1f2421]">
+                    <h3 className=" w-9/12 text-[43px] ps-5 font-semibold text-[#f2f4f3]">Create Your Account</h3>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-9/12 px-10 py-5 text-[#f6f6f6] text-xl bg-[#121319df] rounded-md drop-shadow-md shadow-slate-50 ">
                         <div className="flex flex-col gap-1">
                             <label htmlFor="">Name</label>
-                            <input onChange={(e) => { setName(e.target.value) }} className="inputfield" type="text" placeholder="User Name" />
+                            <input onChange={(e) => { setName(e.target.value) }} className="inputfield" type="text" placeholder="Enter your  name" />
                         </div>
                         <div className="flex flex-row gap-2 items-center">
                             <div className="flex flex-col gap-1 w-5/6">
@@ -153,7 +153,7 @@ const Register = () => {
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="mobile">Contact Number</label>
-                            <input onChange={(e) => { setMobile(e.target.value) }} className="inputfield" type="text" placeholder="877000087" />
+                            <input onChange={(e) => { setMobile(e.target.value) }} className="inputfield" type="text" placeholder="Enter your mobile number" />
                         </div>
                         <div className="flex flex-col gap-1">
                             <label htmlFor="gender">Gender</label>
@@ -174,8 +174,8 @@ const Register = () => {
                         ) : (
                             <button disabled className="px-4 py-2 bg-gray-500 text-[#f2f4f3] rounded mt-5">Sign Up</button>
                         )}
-                        <div className="flex flex-row gap-1 text-lg">
-                            <p>Already a User?</p> <button className="text-black font-normal" onClick={() => { navigate('/login') }}>Sign In</button>
+                        <div className="flex flex-row gap-2 text-lg">
+                            <p>Already have an account?</p> <button className="text-blue-500 font-normal" onClick={() => { navigate('/login') }}>Sign in</button>
                         </div>
                     </form>
                 </div>

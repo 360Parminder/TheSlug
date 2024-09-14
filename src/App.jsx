@@ -6,6 +6,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import ErrorPage from './Components/ErrorPage';
 import History from './Pages/History';
+import './App.css';
 
 setupIonicReact();
 
