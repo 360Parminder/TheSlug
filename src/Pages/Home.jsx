@@ -18,21 +18,14 @@ const Home=()=>{
     return(
       <>
       {
-        loader? <StartLoader /> :
+        loader ? <StartLoader /> :
         (
-          <div className=" w-screen h-screen bg-[#0B101B]">
-      {
-        userToken ? (<UserDashboard/>)
-        :
-          <Dashboard/>
-      }
-       
-    </div> 
+          <div className="w-full min-h-screen bg-[#fafafa]">
+            {userToken ? (<UserDashboard/>) : <Dashboard/>}
+          </div> 
         )
       }
-    
-    
       </>
   )
 }
-export default Home ;
+export default Home;

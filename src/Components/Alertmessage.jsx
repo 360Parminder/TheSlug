@@ -1,63 +1,47 @@
 import { useEffect, useState } from 'react';
+import { ALERT_TYPES, UI_CONSTANTS } from '../constants';
 
 const Alertmessage = ({ message, type }) => {
-    // console.log(type);
+  const [isVisible, setIsVisible] = useState(false);
 
-    let style = {};
-    let mainbody = {};
-
-    if (type === 'success') {
-        style = {
-            backgroundColor: '#a8c59688',
-            border: '1px solid #76c893',
-        };
-        mainbody = {
-            display: "flex",
-        }
-    } else if (type === 'error') {
-        style = {
-            backgroundColor: '#c5a49688',
-            border: '1px solid #800e13',
-            color: '#800e13',
-        };
-        mainbody = {
-            display: "flex",
-        }
-    } else if (type === "info") {
-        style = {
-            backgroundColor: '#96bcc588',
-            border: '1px solid #0582ca',
-            color: '#0582ca',
-        };
-        mainbody = {
-            display: "flex",
-        }
-    } else if (type === "warning") {
-        style = {
-            backgroundColor: '#c5b79688',
-            border: '1px solid #d68c45',
-            color: '#d68c45',
-        };
-        mainbody = {
-            display: "flex",
-        }
-    } else {
-        mainbody = {
-            display: "none",
-        }
+  useEffect(() => {
+    if (type) {
+      setIsVisible(true);
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, UI_CONSTANTS.ALERT_DURATION);
+      return () => clearTimeout(timer);
     }
+  }, [type]);
 
-    setTimeout(() => {
-        type = null;
-    }, 2500);
+  if (!isVisible || !type) {
+    return null;
+  }
 
-    return (
-        <div className='absolute w-full top-5 justify-center hidden' style={mainbody}>
-            <div className='z-10 gap-2 px-4 py-2 rounded-lg items-center' style={style}>
-                <p>{message}</p>
-            </div>
-        </div>
-    )
+  const getAlertStyles = () => {
+    switch (type) {
+      case ALERT_TYPES.SUCCESS:
+        return 'bg-green-100 border border-green-400 text-green-700';
+      case ALERT_TYPES.ERROR:
+        return 'bg-red-100 border border-red-400 text-red-700';
+      case ALERT_TYPES.INFO:
+        return 'bg-blue-100 border border-blue-400 text-blue-700';
+      case ALERT_TYPES.WARNING:
+        return 'bg-yellow-100 border border-yellow-400 text-yellow-700';
+      default:
+        return 'bg-gray-100 border border-gray-400 text-gray-700';
+    }
+  };
+
+  return (
+    <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-11/12 md:w-auto">
+      <div
+        className={`px-4 py-3 rounded-lg flex items-center gap-2 animate-in fade-in slide-in-from-top-2 ${getAlertStyles()}`}
+      >
+        <p className="text-sm md:text-base">{message}</p>
+      </div>
+    </div>
+  );
 };
 
 export default Alertmessage;

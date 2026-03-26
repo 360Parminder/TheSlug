@@ -1,5 +1,8 @@
+// Import config for backward compatibility
+import config from './config';
+
 const baseUrl = {
-    backend: "https://theslugproject.onrender.com",
-  };
-  
- export default baseUrl;
+  backend: config.api.baseURL,
+};
+
+export default baseUrl;
