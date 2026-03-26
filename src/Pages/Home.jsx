@@ -1,31 +1,24 @@
-import Dashboard from "./Dashboard";
-import Cookies from 'cookies-js';
-import UserDashboard from "./UserDashboard";
-import PopupCard from "../Components/PopupCard";
-import StartLoader from "../Components/Loaders/StartLoader";
-import { useContext, useState } from "react";
-import { AuthContext } from "../Context/AuthContext";
+import Dashboard from './Dashboard';
+import StartLoader from '../Components/Loaders/StartLoader';
+import { useState } from 'react';
 
 const Home=()=>{
   const [loader, setLoader] = useState(true);
-  const userToken = Cookies.get("token");
-  const {user } = useContext(AuthContext);
-  console.log(user);
-  
+
   setTimeout(() => {
-      setLoader(false)
+    setLoader(false);
   }, 3000);
-    return(
-      <>
+  return(
+    <>
       {
         loader ? <StartLoader /> :
-        (
-          <div className="w-full min-h-screen bg-[#fafafa]">
-            {userToken ? (<UserDashboard/>) : <Dashboard/>}
-          </div> 
-        )
+          (
+            <div className="w-full min-h-screen bg-[#fafafa]">
+              <Dashboard/>
+            </div>
+          )
       }
-      </>
-  )
-}
+    </>
+  );
+};
 export default Home;

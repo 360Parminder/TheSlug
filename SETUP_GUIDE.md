@@ -1,7 +1,7 @@
 # 🚀 Project Improvement Summary
 
 ## Overview
-Your Slug URL Shortener project has been completely refactored and improved. All code has been audited, restructured, and modernized following industry best practices.
+Your Zurl URL Shortener project has been completely refactored and improved. All code has been audited, restructured, and modernized following industry best practices.
 
 ---
 

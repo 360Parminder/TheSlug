@@ -29,23 +29,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://theslug.netlify.app/">
-    <img src="./public/image/slugblack.png" alt="Logo" width="350" height="150">
+  <a href="https://zurl.com/">
+    <img src="./public/image/zurlblack.png" alt="Logo" width="350" height="150">
   </a>
 
-<h3 align="center">The Slug Project</h3>
+<h3 align="center">Zurl</h3>
 
   <p align="center">
     The URL Shortener project aims to create a service that shortens long URLs into more manageable and shareable links. The project utilizes a frontend built with React for the user interface, and a backend powered by Node.js for handling requests, interacting with a MongoDB database, and sending emails via Nodemailer.
     <br />
-    <a href="https://github.com/360Parminder/TheSlug"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/360Parminder/Zurl"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/360Parminder/TheSlug">View Demo</a>
+    <a href="https://github.com/360Parminder/Zurl">View Demo</a>
     ·
-    <a href="https://github.com/360Parminder/TheSlug/issues">Report Bug</a>
+    <a href="https://github.com/360Parminder/Zurl/issues">Report Bug</a>
     ·
-    <a href="https://github.com/360Parminder/TheSlug/pulls">Request Feature</a>
+    <a href="https://github.com/360Parminder/Zurl/pulls">Request Feature</a>
   </p>
 </div>
 
@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://theslug.netlify.app/)
+[![Product Name Screen Shot][product-screenshot]](https://zurl.com/)
 
 The URL Shortener project aims to create a service that shortens long URLs into more manageable and shareable links. The project utilizes a frontend built with React for the user interface, and a backend powered by Node.js for handling requests, interacting with a MongoDB database, and sending emails via Nodemailer.
 
@@ -120,11 +120,11 @@ This is an example of how to list things you need to use the software and how to
 
 1. Get a free API Key at 
     ```sh
-    slugtheproject@gmail.com
+    zurl@gmail.com
     ```
 2. Clone the repo
    ```sh
-   git clone https://github.com/360Parminder/TheSlug.git
+   git clone https://github.com/360Parminder/Zurl.git
    ```
 3. Install NPM packages
    ```sh
@@ -142,9 +142,9 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Users can navigate to the <a href="https://theslug.netlify.app/">Slug</a> website and find a text input field where they can paste their long URL. Upon submitting the form, the website generates a shortened URL, which users can copy and share with others.
+Users can navigate to the <a href="https://zurl.com/">Zurl</a> website and find a text input field where they can paste their long URL. Upon submitting the form, the website generates a shortened URL, which users can copy and share with others.
 
-_For more examples, please refer to the [Documentation](https://github.com/360Parminder/TheSlug)_
+_For more examples, please refer to the [Documentation](https://github.com/360Parminder/Zurl)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,7 +158,7 @@ _For more examples, please refer to the [Documentation](https://github.com/360Pa
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/360Parminder/TheSlug/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/360Parminder/Zurl/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,22 +196,22 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Parminder Singh - [@twitter_handle](https://twitter.com/360parminder)
 
-Project Link: [https://github.com/360Parminder/TheSlug](https://github.com/360Parminder/TheSlug)
+Project Link: [https://github.com/360Parminder/Zurl](https://github.com/360Parminder/Zurl)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/360Parminder/TheSlug.svg?style=for-the-badge
-[contributors-url]: https://github.com/360Parminder/TheSlug/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/360Parminder/Zurl.svg?style=for-the-badge
+[contributors-url]: https://github.com/360Parminder/Zurl/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/360Parminder/datastorex.svg?style=for-the-badge
-[forks-url]: https://github.com/360Parminder/TheSlug/network/members
+[forks-url]: https://github.com/360Parminder/Zurl/network/members
 [stars-shield]: https://img.shields.io/github/stars/360Parminder/datastorex.svg?style=for-the-badge
-[stars-url]: https://github.com/360Parminder/TheSlug/stargazers
+[stars-url]: https://github.com/360Parminder/Zurl/stargazers
 [issues-shield]: https://img.shields.io/github/issues/360Parminder/datastorex.svg?style=for-the-badge
-[issues-url]: https://github.com//360Parminder/TheSlug/issues
+[issues-url]: https://github.com//360Parminder/Zurl/issues
 [license-shield]: https://img.shields.io/github/license/360Parminder/datastorex.svg?style=for-the-badge
-[license-url]: https://github.com/360Parminder/TheSlug/blob/master/LICENSE.txt
+[license-url]: https://github.com/360Parminder/Zurl/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/parminder-singh-storm/
 [product-screenshot]: ./public/image/Screenshot.png

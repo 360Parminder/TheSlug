@@ -1,16 +1,15 @@
-import React from 'react'
-import ContentLoader from 'react-content-loader'
+import ContentLoader from 'react-content-loader';
 
 const Listloader = () => {
   return (
     <ContentLoader
-    speed={2}
+      speed={2}
       width={'100%'}
       height={400}
       viewBox="0 0 1200 100"
       backgroundColor="#181E29"
       foregroundColor="#353C4A"
-     
+
     >
       <rect x="27" y="139" rx="4" ry="4" width="20" height="20" />
       <rect x="67" y="140" rx="10" ry="10" width="85" height="19" />
@@ -47,12 +46,12 @@ const Listloader = () => {
       <rect x="730" y="316" rx="10" ry="10" width="85" height="19" />
       <rect x="851" y="315" rx="10" ry="10" width="85" height="19" />
       <rect x="951" y="315" rx="10" ry="10" width="85" height="19" />
-      
 
-      
+
+
     </ContentLoader>
-  )
-}
+  );
+};
 
 
 

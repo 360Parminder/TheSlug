@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IonIcon } from '@ionic/react';
 import Lottie from 'lottie-react';
 import animationData from '../assets/Logo.json';
 import { AuthContext } from '../Context/AuthContext';

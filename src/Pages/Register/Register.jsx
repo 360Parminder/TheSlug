@@ -13,7 +13,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState('');
+  const [country, setCountry] = useState('');
   const [gender, setGender] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -83,7 +83,7 @@ const Register = () => {
 
   const handleRegister = async () => {
     // Validation
-    if (!name || !email || !mobile || !gender || !password) {
+    if (!name || !email || !country || !gender || !password) {
       setMessageType(ALERT_TYPES.WARNING);
       setMessage('Please fill all fields');
       return;
@@ -92,12 +92,6 @@ const Register = () => {
     if (!isEmailVerified) {
       setMessageType(ALERT_TYPES.WARNING);
       setMessage('Please verify your email first');
-      return;
-    }
-
-    if (!validators.isValidMobile(mobile)) {
-      setMessageType(ALERT_TYPES.WARNING);
-      setMessage('Please enter a valid mobile number');
       return;
     }
 
@@ -117,7 +111,7 @@ const Register = () => {
         {
           name,
           email,
-          mobile,
+          country,
           gender,
           password,
         },
@@ -157,112 +151,148 @@ const Register = () => {
         />
       )}
 
-      <div className="background w-full min-h-screen flex flex-row gap-4 font-poppins bg-cover" style={{ backgroundImage: "url('/image/bg-register.png')" }}>
-        {/* Left Section - Form */}
-        <div className="flex flex-col w-full sm:w-1/2 h-full items-center justify-center px-4 py-8 sm:px-0">
-          <div className="w-full sm:w-9/12 space-y-4">
-            <h3 className="text-4xl md:text-5xl font-semibold text-white mb-6">Create Your Account</h3>
+      <div className="w-full min-h-screen flex flex-col lg:flex-row bg-white">
+        {/* Left Section - Black backdrop with text */}
+        <div className="hidden lg:flex w-full lg:w-1/2 bg-black flex-col justify-between p-12">
+          <div>
+            <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight tracking-tighter mb-6 uppercase">
+              Precise<br />Digital<br />Coordinates.
+            </h1>
+            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+              Join the architecture of the modern web. Establish your presence with absolute clarity.
+            </p>
+          </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-6 text-white bg-surface-darker rounded-lg shadow-lg">
-              {/* Name Input */}
+          {/* Visual Element - Abstract gradient */}
+          <div className="hidden lg:flex h-60 rounded-lg overflow-hidden shadow-2xl">
+            <div className="w-full h-full bg-gradient-to-br from-gray-700 via-gray-500 to-gray-400 opacity-70" />
+          </div>
+
+          <div className="text-gray-500 text-sm font-bold tracking-widest uppercase">
+            01 — Initial Sequence
+          </div>
+        </div>
+
+        {/* Right Section - Form */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-center px-6 py-12 lg:px-16 lg:py-0">
+          <div className="w-full max-w-md">
+            <h2 className="text-3xl font-black text-black mb-2 uppercase tracking-tight">
+              Create Identity
+            </h2>
+            <p className="text-gray-500 text-sm mb-8 font-medium">
+              Enter your parameters to begin.
+            </p>
+
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              {/* Full Name Input */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="name" className="text-sm font-medium">
+                <label htmlFor="name" className="text-xs font-black text-black tracking-widest uppercase">
                   Full Name
                 </label>
                 <input
                   id="name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="ALEXANDER VOX"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   disabled={isLoading}
-                  className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 disabled:opacity-50"
+                  className="px-4 py-3 bg-gray-100 border border-gray-200 rounded-none text-black placeholder-gray-400 focus:outline-none focus:bg-gray-200 focus:ring-1 focus:ring-black disabled:opacity-50 transition-colors"
                 />
               </div>
 
               {/* Email and Verify Row */}
-              <div className="grid grid-cols-4 gap-2 items-end">
-                <div className="col-span-3 flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email Address
-                  </label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="email" className="text-xs font-black text-black tracking-widest uppercase">
+                  Email Address
+                </label>
+                <div className="flex gap-2">
                   <input
                     id="email"
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder="COORDINATE@ZURL.COM"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isLoading || isEmailVerified}
-                    className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 disabled:opacity-50"
+                    className="flex-1 px-4 py-3 bg-gray-100 border border-gray-200 rounded-none text-black placeholder-gray-400 focus:outline-none focus:bg-gray-200 focus:ring-1 focus:ring-black disabled:opacity-50 transition-colors"
                   />
+                  <button
+                    type="button"
+                    onClick={handleVerifyEmail}
+                    disabled={isVerifyingEmail || isEmailVerified || isLoading}
+                    className={`px-6 py-3 font-bold tracking-widest uppercase text-xs transition-colors ${
+                      isEmailVerified
+                        ? 'bg-emerald-600 text-white'
+                        : 'bg-black text-white hover:bg-gray-800 disabled:bg-gray-400'
+                    }`}
+                  >
+                    {isEmailVerified ? '✓' : 'VERIFY'}
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleVerifyEmail}
-                  disabled={isVerifyingEmail || isEmailVerified || isLoading}
-                  className={`px-3 py-2 rounded-lg font-medium transition-colors ${
-                    isEmailVerified
-                      ? 'bg-green-600 text-white'
-                      : 'bg-primary-600 hover:bg-primary-700 text-white disabled:bg-gray-600'
-                  }`}
-                >
-                  {isEmailVerified ? '✓ Verified' : 'Verify'}
-                </button>
               </div>
 
-              {/* Mobile Input */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="mobile" className="text-sm font-medium">
-                  Mobile Number
-                </label>
-                <input
-                  id="mobile"
-                  type="tel"
-                  placeholder="1234567890"
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
-                  disabled={isLoading}
-                  className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 disabled:opacity-50"
-                />
-              </div>
+              {/* Gender and Country Row */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="gender" className="text-xs font-black text-black tracking-widest uppercase">
+                    Gender
+                  </label>
+                  <select
+                    id="gender"
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value)}
+                    disabled={isLoading}
+                    className="px-4 py-3 bg-gray-100 border border-gray-200 rounded-none text-black focus:outline-none focus:bg-gray-200 focus:ring-1 focus:ring-black disabled:opacity-50 transition-colors appearance-none cursor-pointer"
+                  >
+                    <option value="">SELECT</option>
+                    {GENDER_OPTIONS.map(opt => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label.toUpperCase()}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-              {/* Gender Select */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="gender" className="text-sm font-medium">
-                  Gender
-                </label>
-                <select
-                  id="gender"
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                  disabled={isLoading}
-                  className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-primary-500 disabled:opacity-50"
-                >
-                  <option value="">Select Gender</option>
-                  {GENDER_OPTIONS.map(opt => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="country" className="text-xs font-black text-black tracking-widest uppercase">
+                    Country
+                  </label>
+                  <select
+                    id="country"
+                    value={country}
+                    onChange={(e) => setCountry(e.target.value)}
+                    disabled={isLoading}
+                    className="px-4 py-3 bg-gray-100 border border-gray-200 rounded-none text-black focus:outline-none focus:bg-gray-200 focus:ring-1 focus:ring-black disabled:opacity-50 transition-colors appearance-none cursor-pointer"
+                  >
+                    <option value="">SELECT</option>
+                    <option value="UNITED STATES">UNITED STATES</option>
+                    <option value="CANADA">CANADA</option>
+                    <option value="UNITED KINGDOM">UNITED KINGDOM</option>
+                    <option value="AUSTRALIA">AUSTRALIA</option>
+                    <option value="GERMANY">GERMANY</option>
+                    <option value="FRANCE">FRANCE</option>
+                    <option value="INDIA">INDIA</option>
+                    <option value="JAPAN">JAPAN</option>
+                    <option value="OTHER">OTHER</option>
+                  </select>
+                </div>
               </div>
 
               {/* Password Input */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="password" className="text-sm font-medium">
+                <label htmlFor="password" className="text-xs font-black text-black tracking-widest uppercase">
                   Password
                 </label>
                 <input
                   id="password"
                   type="password"
-                  placeholder="Enter secure password"
+                  placeholder="••••••••••••"
                   value={password}
                   onChange={handlePasswordChange}
                   disabled={isLoading}
-                  className="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 disabled:opacity-50"
+                  className="px-4 py-3 bg-gray-100 border border-gray-200 rounded-none text-black placeholder-gray-400 focus:outline-none focus:bg-gray-200 focus:ring-1 focus:ring-black disabled:opacity-50 transition-colors"
                 />
                 {passwordError && (
-                  <p className="text-red-400 text-xs">{passwordError}</p>
+                  <p className="text-red-500 text-xs font-medium">{passwordError}</p>
                 )}
               </div>
 
@@ -271,49 +301,24 @@ const Register = () => {
                 type="button"
                 onClick={handleRegister}
                 disabled={!isEmailVerified || !!passwordError || isLoading}
-                className="w-full px-4 py-2 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-600 text-white rounded-lg font-medium transition-colors mt-4"
+                className="w-full px-4 py-4 bg-black text-white font-black tracking-widest uppercase text-sm hover:bg-gray-900 disabled:bg-gray-400 transition-colors mt-2"
               >
-                {isLoading ? 'Creating Account...' : 'Sign Up'}
+                {isLoading ? 'Creating...' : 'Register Account →'}
               </button>
 
               {/* Login Link */}
-              <div className="flex flex-row gap-2 text-center justify-center mt-2">
-                <p>Already have an account?</p>
+              <div className="text-center mt-2">
+                <span className="text-gray-600 text-sm">Already have an account? </span>
                 <button
                   type="button"
                   onClick={() => navigate(ROUTES.LOGIN)}
-                  className="text-primary-400 hover:text-primary-300 font-medium"
+                  className="text-black font-bold hover:underline text-sm"
                 >
-                  Sign In
+                  Login
                 </button>
               </div>
             </form>
           </div>
-        </div>
-
-        {/* Right Section - Crypto SVG (Hidden on mobile) */}
-        <div className="hidden sm:flex sm:w-1/2 justify-center items-center">
-          <svg
-            className="w-3/4"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlSpace="preserve"
-            version="1.1"
-            shapeRendering="geometricPrecision"
-            viewBox="0 0 784.37 1277.39"
-          >
-            <g id="Layer_x0020_1">
-              <g id="_1421394342400">
-                <g>
-                  <polygon fill="#343434" fillRule="nonzero" points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.32 784.15,661.57"></polygon>
-                  <polygon fill="#8C8C8C" fillRule="nonzero" points="392.07,0 0,661.57 392.07,882.32 392.07,472.33"></polygon>
-                  <polygon fill="#3C3C3B" fillRule="nonzero" points="392.07,953.67 387.47,960.5 387.47,1277.39 392.07,1277.39 784.15,716.43"></polygon>
-                  <polygon fill="#8C8C8C" fillRule="nonzero" points="392.07,1277.39 392.07,953.67 0,716.43"></polygon>
-                  <polygon fill="#141414" fillRule="nonzero" points="392.07,882.32 784.15,661.57 392.07,472.33"></polygon>
-                  <polygon fill="#393939" fillRule="nonzero" points="0,661.57 392.07,882.32 392.07,472.33"></polygon>
-                </g>
-              </g>
-            </g>
-          </svg>
         </div>
       </div>
     </>

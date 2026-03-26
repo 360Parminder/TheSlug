@@ -86,7 +86,7 @@ Create a `.env.local` file in the root directory:
 
 ```env
 # API Configuration
-VITE_API_BASE_URL=https://theslugproject.onrender.com
+VITE_API_BASE_URL=https://zurl-api.onrender.com
 VITE_API_TIMEOUT=30000
 
 # Firebase Configuration (optional)

@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Activity, Shield, PenTool } from 'lucide-react';
 import UserServices from '../Services/UserServices';
 import { AuthContext } from '../Context/AuthContext';
@@ -56,13 +56,13 @@ const Dashboard = () => {
       {/* Navigation */}
       <nav className="w-full h-24 flex items-center justify-between px-8 bg-white border-b border-gray-100 z-50 sticky top-0">
         <div className="text-2xl font-black tracking-tighter cursor-pointer" onClick={() => navigate(ROUTES.HOME)}>
-          LINKS
+          ZURL
         </div>
         <div className="hidden md:flex items-center gap-10 text-xs font-bold tracking-widest text-gray-500 uppercase">
           <a href="#features" className="hover:text-black transition-colors">Features</a>
           <a href="#pricing" className="hover:text-black transition-colors">Pricing</a>
           <button onClick={() => navigate(ROUTES.LOGIN)} className="hover:text-black transition-colors">Login</button>
-          <button 
+          <button
             onClick={() => navigate(ROUTES.REGISTER)}
             className="bg-black text-white px-8 py-3 hover:bg-gray-900 transition-colors"
           >
@@ -76,7 +76,7 @@ const Dashboard = () => {
         <h1 className="text-6xl md:text-[8rem] leading-[0.85] font-black text-center tracking-tighter mb-16 text-black uppercase">
           Shorten<br />Your Reach
         </h1>
-        
+
         <form onSubmit={shortLink} className="w-full max-w-4xl flex flex-col md:flex-row relative shadow-2xl shadow-gray-200">
           <input
             type="url"
@@ -100,7 +100,7 @@ const Dashboard = () => {
             <p className="text-emerald-500 font-bold text-sm tracking-widest">{successMsg}</p>
             <div className="bg-white px-6 py-4 border border-gray-200 shadow-sm flex items-center gap-4">
               <span className="font-medium text-black">{shortUrl}</span>
-              <button 
+              <button
                 onClick={() => navigator.clipboard.writeText(shortUrl)}
                 className="text-xs bg-black text-white px-3 py-1 font-bold uppercase tracking-wider"
               >
@@ -118,7 +118,7 @@ const Dashboard = () => {
       {/* Features Grid */}
       <section id="features" className="w-full max-w-7xl mx-auto px-4 pb-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-1 md:h-[500px]">
-          
+
           {/* Card 1: Analytics */}
           <div className="md:col-span-8 bg-white p-12 flex flex-col justify-between group">
             <div className="flex justify-between items-start text-gray-400 font-bold text-xs tracking-[0.2em] uppercase">
@@ -193,7 +193,7 @@ const Dashboard = () => {
               <span className="absolute -top-24 -left-8 text-[12rem] font-black text-gray-50 opacity-50 select-none">2</span>
               <h4 className="text-2xl font-black tracking-tighter mb-6 relative z-10 uppercase">Transform</h4>
               <p className="text-gray-500 text-sm leading-relaxed font-medium relative z-10">
-                Our engine condenses the digital coordinate into a sharp, branded 'LINKS' address instantly.
+                Our engine condenses the digital coordinate into a sharp, branded 'ZURL' address instantly.
               </p>
             </div>
             <div className="relative">
@@ -213,7 +213,7 @@ const Dashboard = () => {
           Join the Monolith.
         </h2>
         <div className="flex flex-col md:flex-row gap-6">
-          <button 
+          <button
             onClick={() => navigate(ROUTES.REGISTER)}
             className="bg-white text-black px-12 py-5 font-bold text-sm tracking-widest hover:bg-gray-200 transition-colors uppercase"
           >
@@ -227,7 +227,7 @@ const Dashboard = () => {
 
       {/* Footer */}
       <footer className="w-full bg-white h-24 flex flex-col md:flex-row items-center justify-between px-8 border-t border-gray-100 text-xs font-bold tracking-widest text-gray-400">
-        <div className="text-black font-black text-lg tracking-tighter mb-4 md:mb-0 uppercase">LINKS</div>
+        <div className="text-black font-black text-lg tracking-tighter mb-4 md:mb-0 uppercase">ZURL</div>
         <div className="flex flex-wrap justify-center gap-8 mb-4 md:mb-0 uppercase">
           <a href="#" className="hover:text-black transition-colors">Privacy</a>
           <a href="#" className="hover:text-black transition-colors">Terms</a>
@@ -235,7 +235,7 @@ const Dashboard = () => {
           <a href="#" className="hover:text-black transition-colors">Status</a>
         </div>
         <div className="uppercase">
-          © 2024 LINKS MONOLITH. ALL RIGHTS RESERVED.
+          © 2024 ZURL. ALL RIGHTS RESERVED.
         </div>
       </footer>
 
