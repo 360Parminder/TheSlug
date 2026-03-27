@@ -5,21 +5,30 @@ import UserServices from '../Services/UserServices';
 import { AuthContext } from '../Context/AuthContext';
 import { ROUTES } from '../constants';
 import { validators } from '../utils/validators';
+import Profiledropdown from '../Components/Profiledropdown';
+import baseUrl from '../baseUrl';
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, user } = useContext(AuthContext);
   const [link, setLink] = useState('');
   const [shortUrl, setShortUrl] = useState('');
+  const [shortResult, setShortResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(prev => !prev);
+  };
 
   const shortLink = async (e) => {
     e.preventDefault();
     setError('');
     setSuccessMsg('');
     setShortUrl('');
+    setShortResult(null);
 
     if (!link) {
       setError('Please enter a URL to proceed.');
@@ -40,8 +49,9 @@ const Dashboard = () => {
     try {
       const response = await UserServices.fetchUrl(link);
       if (response) {
-        setShortUrl(response);
-        setSuccessMsg('URL shortened successfully!');
+        setShortUrl(response.shortURL || response.shortUrl || (typeof response === 'string' ? response : ''));
+        setShortResult(typeof response === 'object' ? response : null);
+        setSuccessMsg(response.message || 'URL shortened successfully!');
         setLink('');
       }
     } catch (err) {
@@ -61,13 +71,31 @@ const Dashboard = () => {
         <div className="hidden md:flex items-center gap-10 text-xs font-bold tracking-widest text-gray-500 uppercase">
           <a href="#features" className="hover:text-black transition-colors">Features</a>
           <a href="#pricing" className="hover:text-black transition-colors">Pricing</a>
-          <button onClick={() => navigate(ROUTES.LOGIN)} className="hover:text-black transition-colors">Login</button>
-          <button
-            onClick={() => navigate(ROUTES.REGISTER)}
-            className="bg-black text-white px-8 py-3 hover:bg-gray-900 transition-colors"
-          >
-            Get Started
-          </button>
+          {isLoggedIn ? (
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="w-12 h-12 rounded-full overflow-hidden hover:ring-2 ring-black transition-all"
+              >
+                <img
+                  className="w-full h-full object-cover"
+                  src={user?.profile_picture || 'https://via.placeholder.com/48'}
+                  alt="Profile"
+                />
+              </button>
+              {showDropdown && <Profiledropdown userData={user} onClose={() => setShowDropdown(false)} />}
+            </div>
+          ) : (
+            <>
+              <button onClick={() => navigate(ROUTES.LOGIN)} className="hover:text-black transition-colors">Login</button>
+              <button
+                onClick={() => navigate(ROUTES.REGISTER)}
+                className="bg-black text-white px-8 py-3 hover:bg-gray-900 transition-colors"
+              >
+                Get Started
+              </button>
+            </>
+          )}
         </div>
       </nav>
 
@@ -96,16 +124,33 @@ const Dashboard = () => {
 
         {error && <p className="mt-6 text-red-500 font-bold text-sm tracking-widest">{error}</p>}
         {successMsg && (
-          <div className="mt-8 flex flex-col items-center gap-4">
+          <div className="mt-8 flex flex-col items-center gap-4 w-full max-w-md">
             <p className="text-emerald-500 font-bold text-sm tracking-widest">{successMsg}</p>
-            <div className="bg-white px-6 py-4 border border-gray-200 shadow-sm flex items-center gap-4">
-              <span className="font-medium text-black">{shortUrl}</span>
-              <button
-                onClick={() => navigator.clipboard.writeText(shortUrl)}
-                className="text-xs bg-black text-white px-3 py-1 font-bold uppercase tracking-wider"
-              >
-                Copy
-              </button>
+            <div className="bg-white p-6 border border-gray-200 shadow-xl flex flex-col items-center gap-4 rounded-xl w-full">
+
+              {shortResult?.url_logo && (
+                <div className="w-16 h-16 rounded-full border border-gray-100 p-2 overflow-hidden bg-gray-50 flex items-center justify-center shadow-sm">
+                  <img src={`${baseUrl.backend}/assets/url_logos/${shortResult.url_logo}`} alt="Logo" className="object-contain w-full h-full" />
+                </div>
+              )}
+
+              <div className="bg-gray-50 px-4 py-3 border border-gray-200 shadow-inner flex items-center justify-between gap-4 w-full rounded">
+                <span className="font-medium text-black truncate">{shortUrl}</span>
+                <button
+                  onClick={() => navigator.clipboard.writeText(shortUrl)}
+                  className="text-xs bg-black text-white px-4 py-2 font-bold uppercase tracking-wider rounded hover:bg-gray-800 transition-colors shrink-0"
+                >
+                  Copy
+                </button>
+              </div>
+
+              {shortResult?.url_qr && (
+                <div className="mt-2 p-3 border border-gray-100 rounded bg-white shadow-sm flex flex-col items-center gap-2">
+                  <img src={`${baseUrl.backend}/assets/url_qrs/${shortResult.url_qr}`} alt="QR Code" className="w-40 h-40 object-contain" />
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Scan to open</p>
+                </div>
+              )}
+
             </div>
           </div>
         )}
