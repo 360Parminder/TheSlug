@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Alertmessage from '../../Components/Alertmessage';
@@ -7,9 +7,11 @@ import { cookieUtils } from '../../utils/cookieUtils';
 import { validators } from '../../utils/validators';
 import { getErrorMessage, logError } from '../../utils/errorHandler';
 import { ALERT_TYPES, ROUTES, COOKIE_NAMES } from '../../constants';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -43,6 +45,11 @@ const Login = () => {
 
       if (response.status === 200) {
         cookieUtils.setCookie(COOKIE_NAMES.TOKEN, response.data.token);
+        
+        if (login) {
+          login(response.data.token, response.data.user);
+        }
+
         setMessageType(ALERT_TYPES.SUCCESS);
         setMessage('Authorized successfully!');
         setTimeout(() => {

@@ -53,11 +53,16 @@ export const AuthProvider = ({ children }) => {
     initializeAuth();
   }, [fetchUser]);
 
-  const login = useCallback((userToken, userData = null) => {
+  const login = useCallback(async (userToken, userData = null) => {
     setToken(userToken);
-    setUser(userData);
-    setIsLoggedIn(true);
-  }, []);
+    if (userData) {
+      setUser(userData);
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(true);
+      await fetchUser(userToken);
+    }
+  }, [fetchUser]);
 
   const logout = useCallback(() => {
     Cookies.remove(COOKIE_NAMES.TOKEN);
